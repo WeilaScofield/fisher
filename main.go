@@ -1,30 +1,15 @@
 package main
 
-import "fmt"
-
-type A struct {
-	b *B
-}
-
-type B struct {
-	val int
-}
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
-	a := A{
-		b: &B{
-			1,
-		},
-	}
-	fmt.Println(*a.b)
-	changeB(a)
-	fmt.Println(*a.b)
-}
+	rand.Seed(time.Now().Unix())
 
-func changeB(a A) {
-	b := &B{
-		2,
-	}
-	a.b = b
-	fmt.Println(*a.b)
+	s := rand.Intn(100)
+
+	fmt.Println(s)
 }
